@@ -1,0 +1,47 @@
+{
+  "type": "Chart",
+  "id": 1,
+  "name": "",
+  "items": [
+    {
+      "type": "Item",
+      "id": 1,
+      "name": "laptop",
+      "barcode": 1324567985,
+      "sale": 10,
+      "price": 0.0,
+      "priceWS": 135000.0
+    },
+    {
+      "type": "Chart",
+      "id": 2,
+      "name": "printer+laptop",
+      "items": [
+        {
+          "type": "Item",
+          "id": 1,
+          "name": "laptop",
+          "barcode": 682786711,
+          "sale": 0,
+          "price": 100000.0,
+          "priceWS": 100000.0
+        },
+        {
+          "type": "Item",
+          "id": 2,
+          "name": "printer",
+          "barcode": 64565446,
+          "sale": 0,
+          "price": 150000.0,
+          "priceWS": 150000.0
+        }
+      ],
+      "sale": 0,
+      "price": 250000.0,
+      "priceWS": 250000.0
+    }
+  ],
+  "sale": 0,
+  "price": 250000.0,
+  "priceWS": 385000.0
+}
