@@ -7,7 +7,7 @@ public class Main {
     {
         Cart myCart = new Cart(1);
         myCart.setSale(10);
-        Item laptop = new Item(1, "laptop", 1324567985, 135000, 10);
+        Item laptop = new Item(1, "laptop", 12125101, 135000, 10);
         myCart.addItem(laptop);
         Cart myNestedCart = new Cart (2, "printer+laptop");
         myNestedCart.setSale(0);
