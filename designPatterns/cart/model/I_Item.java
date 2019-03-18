@@ -9,12 +9,12 @@ public interface I_Item {
 
     void setName(String name);
 
-    int getSale();
+    int getDiscount();
 
-    void setSale(int sale);
+    void setDiscount(int discount);
 
     double getPrice();
-    double getPriceWithoutSales();
+    double getPriceWithoutDiscount();
 
 
 }
