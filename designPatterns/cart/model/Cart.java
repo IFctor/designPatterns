@@ -6,7 +6,7 @@ import java.util.List;
 public class Cart implements I_Item  {
     private int id;
     private List<I_Item> items;
-    private int sale;
+    private int discount=0;
     private String name="";
 
     public Cart(int id,  List<I_Item> items) {
@@ -49,26 +49,26 @@ public class Cart implements I_Item  {
         this.items = items;
     }
 
-    public int getSale() {
-        return sale;
+    public int getDiscount() {
+        return discount;
     }
 
-    public void setSale(int sale) {
-        this.sale = sale;
+    public void setDiscount(int discount) {
+        this.discount = discount;
     }
 
     public double getPrice() {
         double resultPrice=0;
-        for (var item:items) {
+        for (I_Item item:items) {
             resultPrice+=item.getPrice();
         }
-        return resultPrice*((100.0-sale)/100.0);
+        return resultPrice*((100.0-discount)/100.0);
     }
-    public double getPriceWithoutSales()
+    public double getPriceWithoutDiscount()
     {
         double resultPrice=0;
-        for (var item:items) {
-            resultPrice+=item.getPriceWithoutSales();
+        for (I_Item item:items) {
+            resultPrice+=item.getPriceWithoutDiscount();
         }
         return resultPrice;
     }
@@ -85,9 +85,9 @@ public class Cart implements I_Item  {
                 ","+'\"'+ "id"+'\"' + ":" + id +
                 ","+'\"'+ "name"+'\"' + ":" + '\"'+ name + '\"' +
                 ","+'\"'+ "items"+'\"' + ":" + items +
-                ","+'\"'+ "sale"+'\"' + ":" + sale +
+                ","+'\"'+ "discount"+'\"' + ":" + discount +
                 ","+'\"'+ "price"+'\"' + ":" + getPrice() +
-                ","+'\"'+ "priceWS"+'\"' + ":" + getPriceWithoutSales() +
+                ","+'\"'+ "priceDS"+'\"' + ":" + getPriceWithoutDiscount() +
                 '}';
     }
 }
