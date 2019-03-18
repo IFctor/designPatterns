@@ -4,15 +4,15 @@ public class Item implements I_Item {
     private int id;
     private String name;
     private long barcode;
-    private int sale;
+    private int discount;
     private double price;
 
-    public Item(int id, String name, long barcode, double price, int sale) {
+    public Item(int id, String name, long barcode, double price, int discount) {
         this.id = id;
         this.name = name;
         this.barcode = barcode;
         this.price = price;
-        this.sale = sale;
+        this.discount = discount;
     }
 
     public int getId() {
@@ -39,18 +39,18 @@ public class Item implements I_Item {
         this.barcode = barcode;
     }
 
-    public int getSale() {
-        return sale;
+    public int getDiscount() {
+        return discount;
     }
 
-    public void setSale(int sale) {
-        this.sale = sale;
+    public void setDiscount(int discount) {
+        this.discount = discount;
     }
 
     public double getPrice() {
-        return price*((100.0-sale)/100.0);
+        return price*((100.0-discount)/100.0);
     }
-    public double getPriceWithoutSales() {
+    public double getPriceWithoutDiscount() {
         return price;
     }
 
@@ -65,9 +65,9 @@ public class Item implements I_Item {
                 ","+'\"'+ "id"+'\"' + ":" + id +
                 ","+'\"'+ "name"+'\"' + ":" + '\"'+ name + '\"' +
                 ","+'\"'+ "barcode"+'\"' + ":" + barcode +
-                ","+'\"'+ "sale"+'\"' + ":" + sale +
+                ","+'\"'+ "discount"+'\"' + ":" + discount +
                 ","+'\"'+ "price"+'\"' + ":" + getPrice() +
-                ","+'\"'+ "priceWS"+'\"' + ":" + getPriceWithoutSales() +
+                ","+'\"'+ "priceDS"+'\"' + ":" + getPriceWithoutDiscount() +
                 '}';
     }
 }
